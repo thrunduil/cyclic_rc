@@ -1,0 +1,23 @@
+==================================================================
+                Installation Instructions
+==================================================================
+
+------------------------------------------------------------------
+                Requirements
+------------------------------------------------------------------
+1. Visual Studio 2015 or later. Source code in principle can be 
+    compiled using other compilers, but compiler independent
+    build system is not available currently.    
+2. Boost library. Tested version: 1.62.
+
+------------------------------------------------------------------
+                    BUILD
+------------------------------------------------------------------
+
+1. cyclic_rc can be build from source using Visual Studio solution. 
+2. Project files must be modified in order to set up paths to
+    required external libraries
+
+
+Copyright (C) 2017  Pawe³ Kowal
+email: thrunduil@gmail.com

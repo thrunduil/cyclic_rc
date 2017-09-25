@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0064c808-7e8c-41a2-8a4a-87dcde2a2467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\include">
+      <UniqueIdentifier>{51cd097f-32c3-4dd4-bc17-0ce4e74aad05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\impl">
+      <UniqueIdentifier>{c0aa3c41-d2e7-4970-ba8e-b5afd3cf05c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\include\cyclic_rc">
+      <UniqueIdentifier>{94c83acd-4103-4b7a-bdea-5b42bed63ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\include\cyclic_rc\details">
+      <UniqueIdentifier>{be74c651-0160-4f09-80b6-3fc2e2ca5041}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\cyclic_rc\include\cyclic_rc\details\shared_ptr.inl">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </None>
+    <None Include="..\..\src\cyclic_rc\include\cyclic_rc\details\obj_count.inl">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </None>
+    <None Include="..\..\src\cyclic_rc\include\cyclic_rc\details\ref_count.inl">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </None>
+    <None Include="..\..\src\cyclic_rc\include\cyclic_rc\details\collector.inl">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\README.md">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\cyclic_rc\include\cyclic_rc\shared_ptr.h">
+      <Filter>Source Files\include\cyclic_rc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\cyclic_rc\include\cyclic_rc\details\obj_count.h">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\cyclic_rc\include\cyclic_rc\details\ref_count.h">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\cyclic_rc\include\cyclic_rc\details\collector.h">
+      <Filter>Source Files\include\cyclic_rc\details</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cyclic_rc\impl\collector.cpp">
+      <Filter>Source Files\impl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\INSTALL.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

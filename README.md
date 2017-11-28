@@ -1,6 +1,7 @@
 ﻿# cyclic_rc
 
 Reference counting handling circular memory references.
+This library is a part of the Morfa project. See morfalang.org.
 
 cyclic_rc :: shared_ptr class offers similar functionality to std :: shared_ptr,
 but is able to reclaim memory in case of reference cycles. This class retains 

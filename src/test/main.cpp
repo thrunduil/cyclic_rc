@@ -24,6 +24,7 @@
 #include <iostream>
 
 #include <thread>
+#include <functional>
 
 using namespace cyclic_rc;
 using namespace cyclic_rc :: testing;

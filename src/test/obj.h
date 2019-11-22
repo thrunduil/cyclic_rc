@@ -45,7 +45,7 @@ class spinlock
         mutex_type  m_mutex;
 
     public:
-        spinlock()      {m_mutex.v_ = 0;};
+        spinlock()      {m_mutex.v_.clear();};
 
         void            lock()      { m_mutex.lock(); };
         void            unlock()    { m_mutex.unlock(); };

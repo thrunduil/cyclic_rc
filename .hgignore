@@ -31,3 +31,5 @@ msvs
 *.vspx
 *.db-shm
 *.db-wal
+*.iobj
+*.ipdb

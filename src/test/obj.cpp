@@ -25,7 +25,11 @@
 #include <mutex>
 #include <set>
 
-#define DEBUG_RC 0
+#if CYCLIC_RC_TEST
+    #define DEBUG_RC 1
+#else
+    #define DEBUG_RC 0
+#endif
 
 namespace cyclic_rc { namespace testing
 {

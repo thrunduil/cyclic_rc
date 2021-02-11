@@ -33,3 +33,5 @@ msvs
 *.db-wal
 *.iobj
 *.ipdb
+tmp/Win32/Debug/cyclic_rc/cyclic_rc.vcxproj.FileListAbsolute.txt
+tmp/Win32/Debug/test_cyclic_rc/test_cyclic_rc.vcxproj.FileListAbsolute.txt

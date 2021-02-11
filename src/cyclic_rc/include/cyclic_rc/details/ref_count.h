@@ -43,6 +43,7 @@ class rc_count
         bool                is_black() const;
         bool                is_gray() const;
         bool                is_white() const;
+        bool                is_yellow() const;
         bool                is_buffered() const;
         bool                is_young() const;
         bool                is_medium() const;
@@ -55,6 +56,7 @@ class rc_count
         void                mark_gray();
         void                mark_white();
         void                mark_purple();
+        void                mark_yellow();
         void                mark_buffered();
         void                mark_nonbuffered();
         void                mark_age(age_type age);
@@ -66,7 +68,8 @@ class rc_count
             green   = 1,    // acyclic
             gray    = 2,    // possible member of cycle
             white   = 3,    // member of garbage cycle
-            purple  = 4,    // possible root of cycle            
+            purple  = 4,    // possible root of cycle
+            yellow  = 5,    // destroyed
         };
 
         struct  ref_info

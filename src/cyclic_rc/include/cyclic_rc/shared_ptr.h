@@ -55,6 +55,8 @@ class cyclic_rc_base
     public:
         static const bool is_multithreaded  = multithread;
 
+        using delete_func   = void (*)(void*);
+
     private:
         counter_type        m_counter;
 
@@ -74,6 +76,10 @@ class cyclic_rc_base
         // accessible object, then memory leaks are possible
         virtual void        visit_children(int type) = 0;
 
+        // return a function used to release memory; on default std::free 
+        // function will be called
+        virtual delete_func get_deleter() const { return default_deleter; };
+
     private:
         const counter_type& get_counter() const { return m_counter; };
         counter_type&       get_counter()       { return m_counter; };        
@@ -86,6 +92,12 @@ class cyclic_rc_base
 
         template<class config>
         friend class details::obj_count;
+
+        static void default_deleter(void* ptr)
+        {
+            std::free(ptr);
+            return;
+        };
 };
 
 // reference counting handling circular memory references

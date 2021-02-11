@@ -252,21 +252,60 @@ bool collector<config>::process_buffers()
     return false;
 };
 
+/*
+static void empty_deleter(void*)
+{
+    return;
+};
+*/
+
 template<class config>
 void collector<config>::process_free_objects()
 {
     using is_free_type  = collector_is_in_free<config, multithreaded>;
 
+    using delete_func   = void (*)(void *);
+    using vec_deleters  = std::vector<delete_func>;
+
     is_free_type::value = true;
     size_t n            = m_objects_to_free.size();
+
+    vec_deleters del;
+    del.reserve(n);
 
     for (size_t i = 0; i < n; ++i)
     {
         slot_base* ptr = m_objects_to_free[i];
+
+        del.push_back(ptr->get_deleter());
         ptr->get_counter().call_destructor(ptr);
+        ptr->get_counter().mark_yellow();
+
+        /*
+        if (ptr->get_counter().is_yellow() == false)
+        {
+            del.push_back(ptr->get_deleter());
+            ptr->get_counter().call_destructor(ptr);
+
+            ptr->get_counter().mark_yellow();
+        }
+        else
+        {
+            del.push_back(empty_deleter);
+        }
+        */
     };
-    
+
+    for (size_t i = 0; i < n; ++i)
+    {
+        slot_base* ptr  = m_objects_to_free[i];
+        delete_func df  = del[i];
+
+        (*df)(ptr);
+    };
+
     m_objects_to_free.clear();
+    del.clear();
 
     is_free_type::value = false;
 };

@@ -154,7 +154,8 @@ class obj_count
         void                free_object(slot_base* s);
         static bool         is_freeing();
         void				decrease_refcount_child(slot_base* s);
-        void                mark_gray(slot_base* s);                
+        void                mark_gray(slot_base* s);
+        void                mark_yellow();
         void                scan(slot_base* s);	
         void                scan_black(slot_base* s);
         void                collect_white(slot_base* s);        
@@ -166,6 +167,7 @@ class obj_count
         size_t              get_cout_impl() const;
         bool                is_purple() const;
         bool                is_black() const;
+        bool                is_yellow() const;
         bool                is_count_zero() const;
         bool                is_young() const;
         bool                is_old() const;

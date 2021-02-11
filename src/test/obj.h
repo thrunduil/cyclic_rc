@@ -86,6 +86,9 @@ class obj : public cyclic_rc_base<multithread>
     public:
         virtual void    visit_children(int op) override;
 
+        // destroyed objects can be reused later
+        virtual delete_func get_deleter() const override  { return empty_del; };
+
     private:
         obj(){};
 
@@ -103,6 +106,8 @@ class obj : public cyclic_rc_base<multithread>
 
     private:
         static obj_vec&     get_obj_vec();
+
+        static void         empty_del(void*)    { return; };
 };
 
 template<bool multithread>

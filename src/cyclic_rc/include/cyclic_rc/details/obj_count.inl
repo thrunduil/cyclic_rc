@@ -135,6 +135,13 @@ bool obj_count<config>::is_black() const
 
 template<class config>
 CYCLIC_RC_FORCE_INLINE 
+bool obj_count<config>::is_yellow() const
+{
+	return m_counter.is_yellow();
+};
+
+template<class config>
+CYCLIC_RC_FORCE_INLINE 
 void obj_count<config>::destroy_acyclic(slot_base* s)
 {
 	call_destructor(s);
@@ -156,6 +163,13 @@ void obj_count<config>::mark_gray(slot_base* s)
 		m_counter.mark_gray();
 		s->visit_children((int)collect_type::decrease_ref_test);
 	};
+}
+
+template<class config>
+CYCLIC_RC_FORCE_INLINE 
+void obj_count<config>::mark_yellow()
+{
+	m_counter.mark_yellow();
 }
 
 template<class config>

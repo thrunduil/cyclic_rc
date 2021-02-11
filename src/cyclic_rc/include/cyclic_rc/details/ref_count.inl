@@ -70,6 +70,11 @@ inline bool rc_count::is_white() const
     return m_ref_info.color == (int)color::white;
 };
 
+inline bool rc_count::is_yellow() const
+{
+    return m_ref_info.color == (int)color::yellow;
+};
+
 inline bool rc_count::is_buffered() const
 {
     return m_ref_info.buffered == 1;
@@ -119,6 +124,11 @@ inline void rc_count::mark_white()
 inline void rc_count::mark_purple()
 {
     m_ref_info.color = (int)color::purple;
+};
+
+inline void rc_count::mark_yellow()
+{
+    m_ref_info.color = (int)color::yellow;
 };
 
 inline void rc_count::mark_buffered()
